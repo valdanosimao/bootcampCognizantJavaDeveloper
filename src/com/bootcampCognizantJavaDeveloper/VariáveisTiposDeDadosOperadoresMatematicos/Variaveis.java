@@ -1,0 +1,46 @@
+package com.bootcampCognizantJavaDeveloper.VariáveisTiposDeDadosOperadoresMatematicos;
+
+
+public class Variaveis {	
+
+	public static void main(String[] args) {
+		
+		String nomeAluno = "Valdano";
+		int idadeAluno = 34;
+		final double NOTA_ALUNO = 9.7;
+		
+		System.out.println("Meu nome é " + nomeAluno + " e minha idade é " + idadeAluno + " e minha nota foi " + NOTA_ALUNO);				
+
+	}	
+	
+}
+
+//**VARIÁVEIS: UM ESPAÇO NA MEMÓRIA DO COMPUTADOR, ONDE SE PODE GUARDAR VALORES.
+//EXISTEM 4 TIPOS: 
+//INSTÂNCIA: OBJETO
+//CLASSE: CLASSE
+//LOCAL: DENTRO DOS MÉTODOS
+//PARÂMETRO: NA ASSINATURA DO MÉTODO
+
+//CRIAÇÃO
+//PADRÃO DE DEFINIÇÃO:
+//<?VISIBILIDADE?> <?MODIFICADOR?> <TIPO> NOME E VALOR INICIAL;
+
+//VISIBILIDADE: PUBLIC, PROTECTED E PRIVATE
+//MODIFICADOR: STATIC E FINAL
+//TIPO DE DADOS: STRING, INT ETC
+//NOME: NOME QUE É FORNECIDO A VARIÁVEL
+//VALOR INICIAL: UM VALOR INICIAL, CASO DESEJE
+
+//CONVENÇÕES E REGRAS
+//NÃO DEVE COMEÇAR COM NÚMEROS, EMBORA PERMITIDO '$' E '_' DEVEM SER EVITADOS
+//SÃO CASE SENSITIVE
+//SEM ESPAÇOS
+//NÃO PODE SER AS PALAVRAS RESERVADAS DO JAVA
+
+//BOAS PRÁTICAS
+//SEMPRE COMEÇAR COM LETRA MINÚSCULA
+//NOMES EXPRESSIVOS
+//NOTAÇÃO CAMELO
+//QUANDO CONSTANTE(FINAL) MAIÚSCULA E SEPARADA POR '_'
+
