@@ -1,4 +1,4 @@
-package com.bootcampCognizantJavaDeveloper.VariáveisTiposDeDadosOperadoresMatematicos;
+package com.bootcampCognizantJavaDeveloper.variáveisTiposDeDadosOperadoresMatematicos;
 
 public class OperadoresAritmeticos {
 

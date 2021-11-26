@@ -1,4 +1,4 @@
-package com.bootcampCognizantJavaDeveloper.EntendendoMetodosJava;
+package com.bootcampCognizantJavaDeveloper.entendendoMetodosJava;
 
 public class Mensagem {
 
