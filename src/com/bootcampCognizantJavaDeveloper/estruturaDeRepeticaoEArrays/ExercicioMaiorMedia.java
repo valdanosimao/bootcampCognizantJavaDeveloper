@@ -1,4 +1,4 @@
-package com.bootcampCognizantJavaDeveloper.EstruturaDeRepeticaoEArrays;
+package com.bootcampCognizantJavaDeveloper.estruturaDeRepeticaoEArrays;
 
 import java.util.Scanner;
 
