@@ -1,0 +1,12 @@
+package com.bootcampCognizantJavaDeveloper.microservicos;
+
+public class Anotações {
+	
+	//MS E BFF - MICROSERVICES E BANCK-END FOR FRONT-END
+	//DDD - DOMAIN-DRIVEN DESIGN
+	//APLICABILIDADE - QUANDO APLICAMOS O DDD
+	
+	//OBS: NO BOOTCAMP NÃO FICOU MUITO CLARO (MUITA TEORIA), ESTUDAR MAIS SOBRE O ASSUNTO
+	
+
+}
