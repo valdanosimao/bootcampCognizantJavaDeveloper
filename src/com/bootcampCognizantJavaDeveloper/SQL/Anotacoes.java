@@ -394,69 +394,153 @@ public class Anotacoes {
 //	
 //	*********************************************************************************
 //	==CHAVE PRIMARIA E ESTRANGEIRA==
+	
+//	== CHAVE PRIMÁRIA 
+//	é basicamente uma coluna ou grupo de colunas, usada para identificar unicamente uma linha de tabela
+//	você consegue criar essas chaves primárias através de restrições (ou contraints em inglês)
+//	que são regras que você define quando está criando uma coluna
+//	assim quando você faz isso você está criando um índice único para aquela coluna ou grupo de colunas
 //	
+//	== CHAVE ESTRANGEIRA
+//	uma chave estrangeira é uma coluna ou grupo de colunas em uma tabela que identifica unicamente uma linha em outra tabela
+//	ou seja, uma chave estrangeira é definida em uma tabela onde ela é apenas uma referência e não contém todos os dados ali
+//	então uma chave estrangeira é simplismente uma coluna ou grupo  de colunas que é uma chave primária em outra tabela
+//	no SQL Server você define uma chave estrangeira através de um "Foreign Key constraint" ou restrição de chave estrangeira
+//	uma restrição de chave estrangeira indica que os valores em uma coluna ou grupo de colunas na tabela filho correspondem aos valores
+//	na tabela pai
+//	nos podemos entender que uma chave estrangeira mantem a "integridade referencial"
+//	
+//	*********************************************************************************
+//	==CREATE TABLE==
+//	Principais tipos de restrições que podem ser aplicadas:	
+//	NOT NULL -  não permite nulos
+//	UNIQUE - força que todos os valores em uma coluna sejam diferentes
+//	PRIMARY KEY - uma junção de NOT NULL e UNIQUE
+//	FOREIGN KEY - identifica únicamente uma linha em outra tabela
+//	CHECK - Força uma condição específica em uma coluna
+//	DEFAULT - Força um valor padrão quando nenhum valor é passado
+//	
+//	CREATE TABLE Canal(
+//	CanalID INT PRIMARY KEY,
+//	Nome varchar(150) NOT NULL,
+//	ContagemIncritos INT DEFAULT 0,
+//	DataCriacao DATETIME NOT NULL
+//	);
 //
+//	SELECT *
+//	FROM Canal	
+//	
+//	*********************************************************************************
+//	==INSERT INTO==
+//	
+//	INSERT INTO aula(id,nome)     
+//	VALUES (1, 'aula01')    //inserindo um valor
 //
+//	SELECT *
+//	FROM aula
 //	
-//	
-//	
-//	
-//	
-//	
+//	INSERT INTO aula(id,nome)
+//	VALUES 					
+//	(2, 'Aula2'),
+//	(3, 'Aula3'),
+//	(4, 'Aula4');		//inserindo vários valores	
 //
+//	SELECT * 
+//	FROM aula
+//	
+//	SELECT * 
+//	INTO tabelaNova FROM aula
 //
-//	
-//	
-//	
-//	
+//	SELECT  * FROM tabelaNova   //copiar tudo de uma tabela existente
 //		
+//	*********************************************************************************
+//	==UPDATE==
 //	
+//	UPDATE aula
+//	SET nome = 'mudei'
+//	WHERE id = 3   //lembrar sempre do WHERE, caso contrário ele altera tudo
 //
-//
+//	*********************************************************************************
+//	==DELETE==
 //	
+//	DELETE FROM aula
+//	WHERE nome = 'mell'  //lembrar sempre do WHERE, caso contrário ele vai apagar tudo
 //	
+//	*********************************************************************************
+//	==ALTER TABLE== (altera a estrutura de uma tabela)
+//	é possível ser várias coisas com o alter table:	
+//	add, remover, ou alterar uma coluna
+//	set valores padrões para uma coluna
+//	add ou remover restrições de colunas
+//	renomear uma tabela
 //	
+//	ALTER TABLE YouTube
+//	ADD ativo bit    //adicionando uma nova coluna
 //	
+//	ALTER TABLE YouTube
+//	ALTER COLUMN categoria VARCHAR(300) NOT NULL	//alterar a capacidade de qtd de caracteres
+//	
+//	EXEC sp_RENAME 'YouTube.nome', 'nomeCanal', 'COLUMN'  //altera o nome da coluna
+//	
+//	EXEC sp_RENAME 'YouTube', 'YouTubeAtualizado' 	//altera o nome da Tabela	
+//	
+//	*********************************************************************************
+//	==DROP TABLE== (Exclui uma tabela do banco de dados)
+//	
+//	DROP TABLE ErrorLog // apaga a tabela ErrorLog
 //		
-//	
+//	TRUNCATE TABLE Person.password //apaga apenas os registros
 //
-//
+//	SELECT *
+//	FROM Person.Password  //
 //	
-//	
-//	
-//	
+//	*********************************************************************************
+//	==CHECK CONSTRAINT==  (Insere restrição em valores)
 //		
-//	
+//	CREATE TABLE CarteiraMotorista (
+//	id INT NOT NULL,
+//	Nome VARCHAR(255) NOT NULL,
+//	Idade INT CHECK (idade >= 18) //CHECK CONSTRAINT
+//	);
 //
+//	SELECT * FROM CarteiraMotorista
 //
+//	INSERT INTO CarteiraMotorista (id,nome, idade)
+//	VALUES (1,'Valdano', 17)  //neste caso dará um erro, pois tem que ser maior ou igual 18
 //	
-//	
-//	
-//	
+//	*********************************************************************************
+//	==NOT NULL CONSTRAINT== (força com que  seja possível insetir dados em uma tabela sem preencher a coluna marcada como NOT NULL)
 //		
+//	CREATE TABLE CarteiraMotorista (
+//	id INT NOT NULL,
+//	Nome VARCHAR(255) NOT NULL,
+//	Idade INT CHECK (idade >= 18) //CHECK CONSTRAINT
+//	);
 //	
-//
-//
-//	
-//	
-//	
-//	
+//	*********************************************************************************
+//	==UNIQUE CONSTRAINT== ( colunas únicas, porém diferente de um primary key, pode existir várias colunas com a restrição UNIQUE)
 //		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+//	CREATE TABLE CarteiraMotorista (
+//	id INT NOT NULL,
+//	Nome VARCHAR(255) NOT NULL,
+//	Idade INT CHECK (idade >= 18),
+//	CodigoCNH INT NOT NULL UNIQUE
+//	);
+//	
+//	*********************************************************************************
+//	==VIEWS== (São tabelas criadas para consulta onde vc usa outras tabelas como base para criar uma nova tabela
+//	de pesquisa com apenas dados específicos que você precisa de uma tabela)
+//		
+//	CREATE VIEW [Pessoas Simplificadas] AS
+//	SELECT FirstName, MiddleName, LastName
+//	FROM Person.Person
+//	WHERE Title = 'MS.'
+//
+//	SELECT * 
+//	FROM [Pessoas Simplificadas]
+//	
+//	
+//	 	
 	
 	
 	
