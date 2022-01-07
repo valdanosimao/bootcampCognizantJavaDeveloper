@@ -433,6 +433,17 @@ public class Anotacoes {
 //	*********************************************************************************
 //	==INSERT INTO==
 //	
+//	INSERT INTO PRODUTOS 
+//	VALUES(1,'IPHONE 11', GETDATE(), 'EAN1232547', 0); //uma maneira
+//	
+//	INSERT INTO PRODUTOS
+//	(CODIGO, DESCRICAO, EAN)
+//	VALUES(2,'NOTEBOOK SANSUNG', 'EAN8591457'); //inserindo em apenas algumas colunas
+//	
+//	SELECT * 
+//	FROM PRODUTOS
+//	WHERE CODIGO = 2 //consultei apenas o numero dois
+//	
 //	INSERT INTO aula(id,nome)     
 //	VALUES (1, 'aula01')    //inserindo um valor
 //
